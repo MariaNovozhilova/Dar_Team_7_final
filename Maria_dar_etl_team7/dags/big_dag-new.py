@@ -5,13 +5,12 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.empty import EmptyOperator
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 from airflow.utils.dates import datetime
-import psycopg
-import json
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scripts import source_to_ods
 from scripts import lgc_dds_with_cleaning
 from scripts import DM_tables
+from scripts import bad_data_collection
 
 default_args = {
     'owner': 'airflow',
@@ -19,7 +18,7 @@ default_args = {
 }
 
 dag = DAG(
-    'source_ods_via_lgs_dds_dm',
+    'big_dag',
     default_args=default_args,
     description='Transfer data from source to ods',
     schedule_interval=None,  
@@ -55,4 +54,10 @@ end_step = EmptyOperator(
     dag=dag
 )
 
-start_step >> copy_step >> lgc_to_dds_step >> dm_step >> end_step
+bad_data_step = PythonOperator(
+        task_id='bad_data_step',
+        python_callable=bad_data_collection.bad_data,
+        dag=dag,
+    )
+
+start_step >> copy_step >> bad_data_step >> lgc_to_dds_step >> dm_step >> end_step
