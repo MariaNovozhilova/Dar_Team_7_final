@@ -1,2 +1,0 @@
-pip install psycopg
-airflow
