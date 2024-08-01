@@ -1,0 +1,326 @@
+CREATE TABLE IF NOT EXISTS ods."базы_данных"
+(
+ 	"название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer
+);
+
+CREATE TABLE IF NOT EXISTS ods."базы_данных_и_уровень_знаний_сотру"
+(
+	    "название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer,
+    "Базы данных" character varying(50) COLLATE pg_catalog."default",
+    "дата" character varying(50) COLLATE pg_catalog."default",
+    "Уровень знаний" character varying(50) COLLATE pg_catalog."default"
+);
+
+CREATE TABLE IF NOT EXISTS ods."инструменты"
+(
+	"название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer
+    	);
+    	 
+
+CREATE TABLE IF NOT EXISTS ods."инструменты_и_уровень_знаний_сотр"
+(	
+	"название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer,
+    "дата" character varying(50) COLLATE pg_catalog."default",
+    "инструменты" character varying(64) COLLATE pg_catalog."default",
+    "Уровень знаний" character varying(50) COLLATE pg_catalog."default"
+    	);
+
+
+CREATE TABLE IF NOT EXISTS ods."образование_пользователей"
+(
+	"User ID" integer,
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer,
+    "Уровень образование" text COLLATE pg_catalog."default",
+    "Название учебного заведения" text COLLATE pg_catalog."default",
+    "Фиктивное название" text COLLATE pg_catalog."default",
+    "Факультет, кафедра" text COLLATE pg_catalog."default",
+    "специальность" text COLLATE pg_catalog."default",
+    "квалификация" text COLLATE pg_catalog."default",
+    "Год окончания" integer
+    	);
+
+CREATE TABLE IF NOT EXISTS ods."опыт_сотрудника_в_отраслях"
+(
+	"User ID" integer,
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer,
+    "дата" character varying(50) COLLATE pg_catalog."default",
+    "отрасли" character varying(50) COLLATE pg_catalog."default",
+    "Уровень знаний в отрасли" character varying(128) COLLATE pg_catalog."default"
+    	);
+
+CREATE TABLE IF NOT EXISTS ods."опыт_сотрудника_в_предметных_обла"
+(
+ 	"User ID" integer,
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer,
+    "дата" character varying(50) COLLATE pg_catalog."default",
+    "Предментые области" character varying(50) COLLATE pg_catalog."default",
+    "Уровень знаний в предметной облас" character varying(128) COLLATE pg_catalog."default"
+    	);
+    	
+CREATE TABLE IF NOT EXISTS ods."отрасли"
+(
+	"название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer
+    	); 
+    	
+CREATE TABLE IF NOT EXISTS ods."платформы"
+(
+	"название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer
+    	);
+    	
+CREATE TABLE IF NOT EXISTS ods."платформы_и_уровень_знаний_сотруд"
+(
+	"User ID" integer,
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer,
+    "дата" character varying(50) COLLATE pg_catalog."default",
+    "платформы" character varying(64) COLLATE pg_catalog."default",
+    "Уровень знаний" character varying(50) COLLATE pg_catalog."default"
+    	);
+    	
+CREATE TABLE IF NOT EXISTS ods."предметная_область"
+(    
+	"название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer
+);   	
+
+CREATE TABLE IF NOT EXISTS ods."резюмедар"  
+(
+	"UserID" integer,
+    "ResumeID" integer,
+    "Активность" text COLLATE pg_catalog."default",
+    "Образование" text COLLATE pg_catalog."default",
+    "Сертификаты/Курсы" text COLLATE pg_catalog."default",
+    "Языки" text COLLATE pg_catalog."default",
+    "Базыданных" text COLLATE pg_catalog."default",
+    "Инструменты" text COLLATE pg_catalog."default",
+    "Отрасли" text COLLATE pg_catalog."default",
+    "Платформы" text COLLATE pg_catalog."default",
+    "Предметныеобласти" text COLLATE pg_catalog."default",
+    "Средыразработки" text COLLATE pg_catalog."default",
+    "Типысистем" text COLLATE pg_catalog."default",
+    "Фреймворки" text COLLATE pg_catalog."default",
+    "Языкипрограммирования" text COLLATE pg_catalog."default",
+    "Технологии" text COLLATE pg_catalog."default");
+    
+CREATE TABLE IF NOT EXISTS ods."сертификаты_пользователей"
+(	"User ID" integer,
+    	"активность" text COLLATE pg_catalog."default",
+    	"Сорт." integer,
+    	"Дата изм." text COLLATE pg_catalog."default",
+    	id integer,
+    	"Год сертификата" integer,
+    	"Наименование сертификата" text COLLATE pg_catalog."default",
+    	"Организация, выдавшая сертификат" text COLLATE pg_catalog."default");	
+
+CREATE TABLE IF NOT EXISTS ods."сотрудники_дар" 
+(
+  id integer,
+    "Дата рождения" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "пол" text COLLATE pg_catalog."default",
+    "фамилия" text COLLATE pg_catalog."default",
+    "имя" text COLLATE pg_catalog."default",
+    "Последняя авторизация" text COLLATE pg_catalog."default",
+    "должность" text COLLATE pg_catalog."default",
+    "цфо" text COLLATE pg_catalog."default",
+    "Дата регистрации" text COLLATE pg_catalog."default",
+    "Дата изменения" text COLLATE pg_catalog."default",
+    "подразделения" text COLLATE pg_catalog."default",
+    "E-Mail" text COLLATE pg_catalog."default",
+    "логин" text COLLATE pg_catalog."default",
+    "компания" text COLLATE pg_catalog."default",
+    "Город проживания" text COLLATE pg_catalog."default"
+);
+
+CREATE TABLE IF NOT EXISTS ods."среды_разработки"
+(	"название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer) ;
+
+CREATE TABLE IF NOT EXISTS ods."среды_разработки_и_уровень_знаний_"
+("название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer,
+    "дата" character varying(50) COLLATE pg_catalog."default",
+    "Среды разработки" character varying(50) COLLATE pg_catalog."default",
+    "Уровень знаний" character varying(50) COLLATE pg_catalog."default");
+
+CREATE TABLE IF NOT EXISTS ods."технологии"
+(
+"название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer);
+
+CREATE TABLE IF NOT EXISTS ods."технологии_и_уровень_знаний_сотру"
+("название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer,
+    "дата" text COLLATE pg_catalog."default",
+    "технологии" text COLLATE pg_catalog."default",
+    "Уровень знаний" text COLLATE pg_catalog."default");  
+
+
+CREATE TABLE IF NOT EXISTS ods."типы_систем"
+(
+ "название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer
+    ); 
+    
+CREATE TABLE IF NOT EXISTS ods."типы_систем_и_уровень_знаний_сотру"
+(
+"название" character varying(50) COLLATE pg_catalog."default",
+    "активность" character varying(50) COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." character varying(50) COLLATE pg_catalog."default",
+    id integer,
+    "дата" character varying(50) COLLATE pg_catalog."default",
+    "Типы систем" character varying(64) COLLATE pg_catalog."default",
+    "Уровень знаний" character varying(50) COLLATE pg_catalog."default"
+    ); 
+
+CREATE TABLE IF NOT EXISTS ods."уровень_образования"
+(    "название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer);
+
+
+CREATE TABLE IF NOT EXISTS ods."уровни_владения_ин"
+(
+"название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer
+);
+
+CREATE TABLE IF NOT EXISTS ods."уровни_знаний"
+(
+	"название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer
+);
+
+
+
+CREATE TABLE IF NOT EXISTS ods."уровни_знаний_в_отрасли"
+(
+
+    "название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer);
+
+CREATE TABLE IF NOT EXISTS ods."уровни_знаний_в_предметной_област"
+( "название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer);
+    
+CREATE TABLE IF NOT EXISTS ods."фреймворки"
+("название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer);
+
+CREATE TABLE IF NOT EXISTS ods."фреймворки_и_уровень_знаний_сотру"
+(
+"название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer,
+    "дата" text COLLATE pg_catalog."default",
+    "Уровень знаний" text COLLATE pg_catalog."default",
+    "фреймворки" text COLLATE pg_catalog."default");
+
+CREATE TABLE IF NOT EXISTS ods."языки"
+(
+"название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer
+    );
+
+ 
+CREATE TABLE IF NOT EXISTS ods."языки_пользователей"
+("название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer,
+    "язык" text COLLATE pg_catalog."default",
+    "Уровень знаний ин. языка" text COLLATE pg_catalog."default");
+
+CREATE TABLE IF NOT EXISTS ods."языки_программирования"
+(	"название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer);
+
+CREATE TABLE IF NOT EXISTS ods."языки_программирования_и_уровень"
+("название" text COLLATE pg_catalog."default",
+    "активность" text COLLATE pg_catalog."default",
+    "Сорт." integer,
+    "Дата изм." text COLLATE pg_catalog."default",
+    id integer,
+    "дата" text COLLATE pg_catalog."default",
+    "Уровень знаний" text COLLATE pg_catalog."default",
+    "Языки программирования" text COLLATE pg_catalog."default");

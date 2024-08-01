@@ -1,0 +1,180 @@
+CREATE view lgs.dbms AS SELECT 
+"название" AS dbms,
+    "активность" AS active,
+    "Сорт." AS sort,
+    "Дата изм." AS updated_at,
+    id 
+FROM ods."базы_данных";
+
+CREATE view lgs.dbms_and_employee_level AS SELECT
+id,
+"название" AS "user_id",
+ "Дата изм." AS "updated_at",
+ "Сорт." AS "sort",
+ "Уровень знаний" AS "grade",
+ "активность" AS "active",
+ "дата" AS date,
+ "Базы данных" AS dbms
+ FROM ods."базы_данных_и_уровень_знаний_сотру";
+
+CREATE view lgs.program AS SELECT
+id,
+"Дата изм." AS "updated_at",
+"Сорт." AS  "sort" ,
+"активность" AS  "active",
+ "название" AS "program" 
+ FROM ods."инструменты";
+
+CREATE view lgs.program_and_employee_level AS SELECT
+id,
+ "Дата изм."  AS "updated_at",
+ "Сорт." AS "sort",
+ "Уровень знаний" AS "grade",
+ "активность" AS "active",
+  "дата" AS "date",
+"инструменты" AS "program",
+ "название" AS "user_id"
+ FROM ods."инструменты_и_уровень_знаний_сотр"; 	 
+
+CREATE view lgs.education AS SELECT
+"User ID" AS "user_id",
+ id,
+ "Год окончания" AS "year_graduated",
+ "Дата изм." AS "updated_at",
+ "Название учебного заведения" AS "institution_name",
+ "Сорт." AS "sort",
+ "Уровень образование" AS "education_level",
+ "Факультет, кафедра"  AS "faculty_department",
+ "Фиктивное название" AS "short_name",
+ "активность" AS "active",
+ "квалификация" AS "qualification",
+"специальность" AS "specialty"
+FROM ods."образование_пользователей";
+
+CREATE view lgs.industry_employee_experience AS SELECT
+"User ID" AS "user_id",
+ id,
+ "Дата изм."  AS "updated_at",
+ "Сорт." AS "sort",
+ "Уровень знаний в отрасли" AS "experience",
+ "активность" AS "active",
+ "дата" AS "date",
+ "отрасли" AS "industry"
+ FROM ods."опыт_сотрудника_в_отраслях";
+
+
+CREATE view lgs.employee_domain_experience AS SELECT
+"User ID" AS "user_id",
+ id,
+ "Дата изм."  AS "updated_at",
+ "Предментые области" AS "domain",
+ "Сорт." AS "sort",
+ "Уровень знаний в предметной облас" AS "domain_experience",
+ "активность" AS "active",
+"дата" AS "date"
+FROM ods."опыт_сотрудника_в_предметных_обла";
+
+CREATE view lgs.industry AS SELECT
+id,
+ "Дата изм."  AS "updated_at",
+ "Сорт." AS "sort",
+ "активность" AS "active",
+ "название"  AS "industry"
+ FROM ods."отрасли";
+
+    	
+CREATE view lgs.platform AS SELECT
+id,
+ "Дата изм." AS "updated_at",
+ "Сорт." AS "sort",
+ "активность" AS "active" ,
+ "название" AS "platform"
+ FROM ods."платформы";
+    	
+CREATE view lgs.platform_and_employee_grade AS SELECT
+"User ID" AS "user_id",
+ id,
+ "Дата изм." AS "updated_at",
+ "Сорт." AS "sort" ,
+ "Уровень знаний" AS "grade",
+"активность" AS "active",
+ "дата"  AS "date",
+ "платформы" AS "platform"
+ FROM ods."платформы_и_уровень_знаний_сотруд";
+
+    	
+CREATE view lgs.domain AS SELECT
+id,
+ "Дата изм." AS "updated_at",
+ "Сорт." AS "sort",
+ "активность" AS "active" ,
+ "название"  AS "domain"
+ FROM ods."предметная_область";
+    	
+CREATE view lgs.resume AS SELECT
+"ResumeID" AS id,
+ "UserID" AS "user_id",
+ "Активность" AS "active",
+"Базыданных" AS "dbms",
+ "Инструменты" AS "program",
+ "Образование" AS "education",
+"Отрасли" AS "industry",
+"Платформы" AS "platform",
+"Предметныеобласти" AS "domain",
+ "Сертификаты/Курсы" AS "certificate",
+"Средыразработки" AS "sde",
+"Технологии" AS "tool",
+"Типысистем" AS "software_type",
+ "Фреймворки" AS "framework",
+ "Языки" AS "language",
+ "Языкипрограммирования" AS "programming_language"
+ FROM ods."резюмедар";	
+
+CREATE view lgs.employee_certificate  AS SELECT
+"User ID" AS "user_id",
+ id,
+"Год сертификата" AS "year",
+"Дата изм." AS "updated_at",
+"Наименование сертификата" AS "title",
+"Организация, выдавшая сертификат" AS "organisation",
+"Сорт." AS "sort",
+"активность" AS "active"
+FROM ods."сертификаты_пользователей";
+    
+CREATE view lgs.employee AS SELECT
+"E-Mail" AS "email",
+ id,
+ "Город проживания" AS "city",
+ "Дата изменения" AS "updated_at",
+ "Дата регистрации"  AS "registered_at",
+ "Дата рождения" AS "birth_date",
+ "Последняя авторизация" AS "last_check_in",
+"активность" AS "active",
+ "должность" AS "position",
+ "имя" AS "name",
+ "компания" AS "company",
+ "логин" AS "login",
+ "подразделения" AS "department",
+ "пол" AS "gender",
+ "фамилия" AS "surname",
+ "цфо" AS "frc" 
+ FROM ods."сотрудники_дар";
+
+CREATE view lgs.sde AS SELECT
+id,
+ "Дата изм." AS "updated_at",
+ "Сорт."  AS "sort",
+ "активность" AS "active",
+ "название" AS "sde" 
+ FROM ods."среды_разработки";
+ 
+CREATE view lgs.sde_and_employee_grade AS SELECT
+id,
+ "Дата изм." AS "updated_at",
+ "Сорт." AS "sort",
+"Среды разработки" AS "sde",
+ "Уровень знаний" AS "grade",
+ "активность" AS "active",
+ "дата" AS "date",
+ "название" AS "user_id" 
+ FROM ods."среды_разработки_и_уровень_знаний_";

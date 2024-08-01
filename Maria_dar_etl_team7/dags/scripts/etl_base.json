@@ -1,0 +1,7 @@
+{
+    "db_name" :"etl_db_7", 
+    "db_user" :"etl_user_7", 
+    "db_password" :"MjT3-%>s", 
+    "db_host" :"10.82.0.4", 
+    "db_port" : 5432
+}
